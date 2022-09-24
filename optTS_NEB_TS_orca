@@ -1,0 +1,26 @@
+! XTB2 ALPB(water) NEB-TS NumFreq slowconv tightscf
+#! BLYP D3 def2-SVP def2/J CPCM NEB-TS NumFreq
+#! B3LYP SV(P) NEB-TS cpcm
+#! B97-3c cpcm ZOOM-NEB-TS numFreq
+
+%maxcore  24000
+%pal nprocs  12 end
+%xtb
+xtbinputstring  "--iterations"
+xtbinputstring2  "1000"
+end
+%geom
+ calc_hess true
+ NumHess true # Request numerical Hessian (analytical not available)
+ Recalc_Hess 2  # Recalculate the Hessian every 2 steps
+ MaxIter 1000
+end
+%neb
+NEB_End_XYZFile "product.xyz"
+TS "tsguess.xyz"
+Nimages 20
+free_end true
+#preopt_ends true
+end
+
+*xyzfile carga mult reactant.xyz

@@ -1,0 +1,12 @@
+%chk=OH_opt.chk
+%mem=10GB
+%nprocshared=56
+#p opt=(calcfc,noeigen) freq 6-311+g(2d,p) scrf=(smd,solvent=water)
+int=(ultrafine,acc2e=12) m062x scf=novaracc
+
+hl OPT-FREQ
+
+-1 1
+ O                  0.00000000    0.00000000    0.10689000
+ H                  0.00000000    0.00000000   -0.85512000
+

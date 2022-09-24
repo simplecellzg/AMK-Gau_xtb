@@ -1,0 +1,27 @@
+--General--
+molecule  amk_mol
+LowLevel  qcore xtb
+LowLevel_TSopt gaussian hf/3-21g
+HighLevel  g09 M062X/6-31+G(d,p) 
+iop        iop(3/70=30000)
+HL_rxn_network complete
+IRCpoints 30
+charge -1
+mult    1
+
+--Method--
+sampling MD
+temp     10
+ntraj    1
+factorflipv  500
+fs     1000
+post_proc bbfs 5 1
+
+--Screening--
+imagmin 50
+MAPEmax 0.0001
+BAPEmax 2.5
+eigLmax 0.1
+
+--Kinetics--
+Energy 150

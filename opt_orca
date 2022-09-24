@@ -1,0 +1,12 @@
+! XTB2 ALPB(water) opt
+#! B3LYP SV(P) opt
+#! BLYP D3 def2-SVP def2/J CPCM opt
+
+%maxcore  10000
+%pal nprocs  8 end
+# %cpcm
+#  smd true
+#  SMDsolvent "WATER"
+# end
+
+*xyzfile carga mult min.xyz

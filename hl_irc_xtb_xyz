@@ -1,0 +1,7 @@
+%chk=mol.chk
+%nproc=1
+#p irc=(calcall,maxpoints=20,lqa) external='./xtb.sh'
+
+irc
+
+-1 1

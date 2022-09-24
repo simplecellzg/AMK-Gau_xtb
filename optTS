@@ -1,0 +1,13 @@
+ts_hf_xtb_hess := optimize(
+  structure( file = 'ts.xyz' )
+  ts = true
+  xyz_output = 'ts_opt.xyz'
+  save_coordinates = 'ts_optimization.xyz'
+  xtb()
+)
+
+my_result := hessian(
+  structure(file = 'ts_opt.xyz')
+  save_normal_modes = 'freq.molden'
+  xtb()
+)

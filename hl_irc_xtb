@@ -1,0 +1,4 @@
+%chk=mol.chk
+%nproc=1
+#p irc=(calcall,maxpoints=20,lqa) geom=allcheck external='./xtb.sh'
+

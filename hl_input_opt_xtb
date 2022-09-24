@@ -1,0 +1,5 @@
+#P opt(ts,calcall,noeigen,nomicro,maxstep=5) external='./xtb.sh'
+
+ts search
+
+charge mult

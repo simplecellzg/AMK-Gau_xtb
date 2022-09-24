@@ -1,0 +1,17 @@
+--General--
+molecule  NC-OH
+LowLevel  orca xtb2
+fragmentA NC1_opt
+fragmentB OH_opt
+charge -1
+mult    1
+
+--Method--
+sampling association
+rotate   16 com 2.5 2.0 
+Nassoc  50
+
+--Screening--s
+MAPEmax 0.0001
+BAPEmax 0.5
+eigLmax 0.5

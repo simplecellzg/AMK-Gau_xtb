@@ -1,0 +1,28 @@
+--General--
+molecule  amk_mol
+LowLevel  orca xtb2
+LowLevel_TSopt orca xtb2
+HighLevel  orca M062X/6-31+G(d,p) 
+iop        iop(3/70=30000)
+HL_rxn_network complete
+IRCpoints 30
+charge -1
+mult    1
+
+--Method--
+sampling MD
+temp     350
+ntraj    1
+factorflipv  500
+fs     1500
+post_proc neb 5 1
+multiple_minima yes
+
+--Screening--
+imagmin 50
+MAPEmax 0.0001
+BAPEmax 2.5
+eigLmax 0.0001
+
+--Kinetics--
+Energy 150

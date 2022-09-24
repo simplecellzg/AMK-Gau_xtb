@@ -1,0 +1,13 @@
+my_result := optimize(
+  structure(file = 'min.xyz')
+  xyz_output = 'min_opt.xyz'
+  save_coordinates = 'min_optimization.xyz'
+  gradient_max = 5e-2
+  gradient_rms = 5e-2
+  translation(atoms=[labels]
+           frozen = true)
+  dft(ao = '6-31G*'
+  xc = B3LYPD3
+  multiplicity = 'singlet'
+  )
+)

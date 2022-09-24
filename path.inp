@@ -1,0 +1,9 @@
+$path
+nrun=1
+npoint=100
+anopt=20
+kpush=0.001
+kpull=-0.015
+ppull=0.05
+alp=0.6
+$end

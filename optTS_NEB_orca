@@ -1,0 +1,21 @@
+! XTB2 ALPB(water) NEB NumFreq
+#! BLYP D3 def2-SVP def2/J CPCM NEB-TS NumFreq
+#! B3LYP SV(P) NEB-TS cpcm
+
+%maxcore  24000
+%pal nprocs  12 end
+%xtb
+xtbinputstring  "--iterations"
+xtbinputstring2  "1000"
+end
+%neb
+NEB_End_XYZFile "product_opt.xyz"
+MaxIter 500
+Nimages 60
+Tol_MaxFP_I  8.e-3
+Tol_RMSFP_I  2.e-3
+free_end true
+#preopt_ends true
+end
+
+*xyzfile carga mult reactant.xyz

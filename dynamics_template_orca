@@ -1,0 +1,22 @@
+#! MD B97-3c CPCM
+! MD XTB2 ALPB(water)
+#! MD BLYP D3 def2-SVP def2/J CPCM
+%maxcore  24000
+%pal nprocs  12 end
+%md
+#restart ifexists  # Continue MD by reading [basename].mdrestart if it exists. In this case "initvel" should be commented
+#minimize  # Do minimization prior to MD simulation
+ timestep 0.5_fs  # This stepsize is safe at several hundreds of Kelvin
+ initvel itvl_K no_overwrite # Assign velocity according to temperature for atoms whose velocities are not available
+ thermostat CSVR tartemp_K timecon 10.0_fs  # Target temperature and coupling time constant
+ dump position stride 1 format xyz filename "pos.xyz"  # Dump position every "stride" steps
+#dump force stride 1 format xyz filename "force.xyz"  # Dump force every "stride" steps
+#dump velocity stride 1 format xyz filename "vel.xyz"  # Dump velocity every "stride" steps
+#dump gbw stride 20 filename "wfn"  # Dump wavefunction to "wfn[step].gbw" files every "stride" steps
+ run  runsteps  CenterCOM # Number of MD steps
+end
+#%cpcm
+#  smd true
+#  SMDsolvent "WATER"
+#end
+* xyzfile carga mult min.xyz

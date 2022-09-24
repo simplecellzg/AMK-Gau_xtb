@@ -1,0 +1,16 @@
+my_result := aimd(
+  structure(file = 'opt_start.xyz')
+  n_steps = 500
+  velocities (file = 'v0')
+  save_to_file = true
+  output_coordinates = 'traj'
+  dft(
+  charge = carga
+  multiplicity = singlet
+  ao = '6-31++G*'
+  xc = BLYPD3
+  solvation (solvent = water)
+  fock_damping = 0.9
+  fock_damping_gradient_threshold = 0.3
+  ) 
+)

@@ -1,0 +1,10 @@
+my_result := optimize(
+  structure(file = 'min.xyz')
+  xyz_output = 'min_opt.xyz'
+  xtb(
+  charge = carga
+  solvation (solvent = water)
+  fock_damping = 0.9
+  fock_damping_gradient_threshold = 0.3
+  )
+)

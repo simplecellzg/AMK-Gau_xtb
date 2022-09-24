@@ -1,0 +1,17 @@
+! XTB2 ALPB(water) ZOOM-NEB-TS NumFreq
+#! BLYP D3 def2-SVP def2/J CPCM NEB-TS NumFreq
+#! B3LYP SV(P) NEB-TS cpcm
+
+%maxcore  6000
+%pal nprocs  12 end
+%neb
+NEB_End_XYZFile "product.xyz"
+Nimages 30
+preopt_ends true
+end
+#%cpcm
+#  smd true
+#  SMDsolvent "WATER"
+#end
+
+*xyzfile carga mult reactant.xyz

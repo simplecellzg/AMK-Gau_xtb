@@ -1,0 +1,9 @@
+! PM3 NEB
+%maxcore  1500
+#%pal nprocs  8 end
+%neb
+NEB_End_XYZFile "prod.xyz"
+Nimages 6
+end
+
+* xyzfile -1 1 reactant.xyz

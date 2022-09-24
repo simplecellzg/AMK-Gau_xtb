@@ -1,0 +1,20 @@
+my_result := aimd(
+  structure(file = 'opt_start.xyz')
+  n_steps = 500
+  velocities (file = 'v0')
+  save_to_file = true
+  output_coordinates = 'traj'
+  output_steps = 50
+  xtb(
+  charge = carga
+  solvation (solvent = water)
+  fock_damping = 0.9
+  fock_damping_gradient_threshold = 0.3
+  ) 
+  thermostat()
+  metadynamics(
+  collective_variable = 'aligned_rmsd'
+  bias_width = 5. au
+  bias_force_constant = 1.e-3 au
+  reference_sampling_period = 1. ps)
+)

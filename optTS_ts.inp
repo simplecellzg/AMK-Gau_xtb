@@ -1,0 +1,10 @@
+! PM3 OptTS NumFreq
+%maxcore  1500
+#%pal nprocs  8 end
+%geom
+Calc_Hess true # Calculate Hessian in the beginning
+NumHess true # Request numerical Hessian (analytical not available)
+Recalc_Hess 5  # Recalculate the Hessian every 5 steps
+end
+
+* xyzfile -1 1 reactant.xyz

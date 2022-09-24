@@ -1,0 +1,7 @@
+%chk=example.chk
+#p opt=(calcfc,ts,noeigen,maxcycle=30) freq m062x/6-311+g(2d,p)
+scrf=(smd,solvent=water) int=(ultrafine,acc2e=12) scf=novaracc
+
+hl ts search
+
+-1 1
